@@ -262,3 +262,211 @@ body
         grid-template-columns: 1fr;
     }
 }
+
+/* =========================
+   CART PAGE
+========================= */
+
+.cart-container{
+    width:95%;
+    max-width:1400px;
+    margin:50px auto;
+    padding:20px;
+}
+
+.cart-title{
+    text-align:center;
+    font-size:50px;
+    margin-bottom:50px;
+    color:#222;
+}
+
+.cart-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.cart-card{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.cart-card:hover{
+    transform:translateY(-5px);
+}
+
+.cart-card img{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+.cart-card h2{
+    font-size:24px;
+    margin-bottom:15px;
+    color:#222;
+}
+
+.cart-card p{
+    font-size:18px;
+    margin-bottom:10px;
+    color:#555;
+}
+
+.total-price{
+    font-size:22px;
+    font-weight:bold;
+    color:#d4af37;
+    margin:15px 0;
+}
+
+.remove-btn{
+    display:inline-block;
+    background:red;
+    color:white;
+    padding:12px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.remove-btn:hover{
+    background:darkred;
+}
+
+.grand-total{
+    text-align:right;
+    margin-top:40px;
+    font-size:32px;
+    font-weight:bold;
+    color:#222;
+}
+
+.empty-cart{
+    text-align:center;
+    font-size:35px;
+    padding:80px;
+    color:#555;
+}
+
+/* =========================
+   ORDER STATUS
+========================= */
+
+.cancel-btn{
+    background:red;
+    color:white;
+    padding:8px 15px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.cancel-btn:hover{
+    background:darkred;
+}
+
+/* =========================
+   CUSTOMER HEADER
+========================= */
+
+.customer-header{
+    background:black;
+    padding:20px 50px;
+}
+
+.customer-header .nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+    align-items:center;
+}
+
+.customer-header .nav-links li a{
+    color:white;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.customer-header .nav-links li a:hover{
+    color:#d4af37;
+}
+
+/* =========================
+   SAMPLE PAGE
+========================= */
+
+.sample-container{
+    width:90%;
+    margin:50px auto;
+    text-align:center;
+}
+
+.page-title{
+    font-size:45px;
+    margin-bottom:10px;
+    color:#111;
+}
+
+.sample-heading{
+    font-size:35px;
+    margin-bottom:40px;
+    color:#d4af37;
+}
+
+.sample-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+    align-items:stretch;
+}
+
+.sample-card{
+    background:#fff;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+    text-align:center;
+    overflow:hidden;
+}
+
+.sample-card:hover{
+    transform:translateY(-8px);
+}
+
+/* SAMPLE CARD IMAGE FIX */
+
+.sample-card img{
+    width:100%;
+    height:220px;
+    object-fit:contain;
+    object-position:center;
+    background:#ffffff;
+    padding:20px;
+    display:block;
+    margin:auto;
+}
+
+.sample-card h3{
+    margin-top:20px;
+    font-size:28px;
+    color:#222;
+}
+
+.sample-card p{
+    color:#555;
+    padding:0 20px;
+    margin-top:10px;
+    font-size:18px;
+}

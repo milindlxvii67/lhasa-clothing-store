@@ -1,23 +1,58 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-</head>
-
-<body>
 <?php
-$Id=$_GET['CartId'];
-	
-	$con = mysqli_connect ("localhost","root", "", "shopping");
 
-	
-	$sql = "delete from shopping_cart where CartId='".$Id."'";
+session_start();
 
-	mysqli_query ($con, $sql);
-	
-	mysqli_close ($con);
-	echo '<script type="text/javascript">alert("Item Deleted Succesfully");window.location=\'Cart.php\';</script>';
-	?>
-</body>
-</html>
+if(!isset($_SESSION['Customer']))
+{
+    header("Location: ../Login.php");
+    exit();
+}
+
+$con = mysqli_connect("localhost","root","","shopping");
+
+if(!$con)
+{
+    die("Database Connection Failed");
+}
+
+/* =========================
+   CHECK ID
+========================= */
+
+if(!isset($_GET['id']))
+{
+    die("Invalid Cart ID");
+}
+
+$CartId = intval($_GET['id']);
+
+/* =========================
+   DELETE ITEM
+========================= */
+
+$sql = "DELETE FROM shopping_cart WHERE CartId='$CartId'";
+
+$result = mysqli_query($con,$sql);
+
+if(!$result)
+{
+    die(mysqli_error($con));
+}
+
+/* =========================
+   SUCCESS
+========================= */
+
+echo "
+
+<script>
+
+alert('Item Deleted Successfully');
+
+window.location='Cart.php';
+
+</script>
+
+";
+
+?>

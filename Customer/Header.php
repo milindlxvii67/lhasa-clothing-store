@@ -30,43 +30,33 @@ if(session_status() == PHP_SESSION_NONE)
 
     </a>
 
-   <nav class="customer-nav">
+  <nav>
 
-    <a href="/LCS/Customer/index.php">
-        Home
-    </a>
+    <ul class="nav-links">
 
-    <a href="/LCS/Customer/Categories.php">
-        Categories
-    </a>
+        <li><a href="index.php">Dashboard</a></li>
 
-    <a href="/LCS/Customer/Products.php">
-        Products
-    </a>
+        <li><a href="Products.php">Products</a></li>
 
-    <a href="/LCS/Customer/Offers.php">
-        Offers
-    </a>
+        <li><a href="Categories.php">Categories</a></li>
 
-    <a href="/LCS/Customer/Cart.php">
-        Cart
-    </a>
+        <li><a href="Offers.php">Offers</a></li>
 
-    <a href="/LCS/Customer/OrderHistory.php">
-        Orders
-    </a>
+        <li><a href="Cart.php">Cart</a></li>
 
-    <a href="/LCS/Contact.php">
-        Contact
-    </a>
+        <li><a href="OrderHistory.php">Orders</a></li>
 
-    <a href="/LCS/Customer/profile.php">
-        Profile
-    </a>
+        <li><a href="Feedback.php">Feedback</a></li>
 
-    <a href="/LCS/Logout.php">
-        Logout
-    </a>
+        <li><a href="History.php">History</a></li>
+
+        <li><a href="Insert.php">Add to Cart</a></li>
+
+        <li><a href="Sample.php">Sample</a></li>
+
+        <li><a href="Logout.php">Logout</a></li>
+
+    </ul>
 
 </nav>
 

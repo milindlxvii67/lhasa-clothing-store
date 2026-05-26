@@ -191,7 +191,7 @@ while($row=mysqli_fetch_array($result))
 
 </div>
 
-<?php include "Footer.php"; ?>
+<?php include "../Footer.php"; ?>
 
 </body>
 </html>

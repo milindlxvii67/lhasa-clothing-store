@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 if(!isset($_SESSION['Admin']))
@@ -6,6 +7,7 @@ if(!isset($_SESSION['Admin']))
     header("location:../Login.php");
     exit();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -14,63 +16,32 @@ if(!isset($_SESSION['Admin']))
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Admin Contact - Lhasa Clothing Store</title>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+Admin Contact - Lhasa Clothing Store
+</title>
+
+<link rel="stylesheet" href="style.css">
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-    background:#f4f4f4;
-}
-
-/* HEADER */
-
-header{
-    width:100%;
-    background:black;
-    padding:20px 60px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    color:#00e676;
-    font-size:22px;
-    font-weight:bold;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:30px;
-}
-
-nav ul li a{
-    text-decoration:none;
-    color:white;
-    font-size:16px;
-    transition:0.3s;
-}
-
-nav ul li a:hover{
-    color:#00e676;
-}
-
-/* CONTACT SECTION */
+/* =========================
+   PAGE SECTION
+========================= */
 
 .contact-section{
     width:100%;
     padding:80px 40px;
+    background:#f4f4f4;
+    min-height:80vh;
 }
+
+/* =========================
+   CONTACT CONTAINER
+========================= */
 
 .contact-container{
     max-width:1200px;
@@ -80,23 +51,37 @@ nav ul li a:hover{
     gap:40px;
 }
 
+/* =========================
+   CONTACT BOX
+========================= */
+
 .contact-box{
-    background:white;
+    background:#fff;
     padding:40px;
-    border-radius:12px;
+    border-radius:20px;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
+/* =========================
+   HEADINGS
+========================= */
+
 .contact-box h1{
-    font-size:48px;
+    font-size:42px;
     margin-bottom:25px;
+    color:#111;
 }
 
 .contact-box h2{
-    color:#00cc66;
+    color:#d4af37;
     margin-top:30px;
     margin-bottom:15px;
+    font-size:24px;
 }
+
+/* =========================
+   TEXT
+========================= */
 
 .contact-box p{
     color:#555;
@@ -104,64 +89,70 @@ nav ul li a:hover{
     font-size:18px;
 }
 
+/* =========================
+   FORM
+========================= */
+
 form input,
 form textarea{
     width:100%;
     padding:16px;
     margin-bottom:20px;
     border:1px solid #ccc;
-    border-radius:8px;
+    border-radius:10px;
     font-size:16px;
+    outline:none;
 }
 
 form textarea{
-    height:150px;
+    height:160px;
     resize:none;
 }
 
+/* =========================
+   BUTTON
+========================= */
+
 button{
-    background:black;
-    color:white;
+    background:#000;
+    color:#fff;
     padding:15px 35px;
     border:none;
-    border-radius:8px;
+    border-radius:10px;
     font-size:18px;
     cursor:pointer;
     transition:0.3s;
+    font-weight:bold;
 }
 
 button:hover{
-    background:#00cc66;
-    color:black;
+    background:#d4af37;
+    color:#000;
 }
 
-/* FOOTER */
+/* =========================
+   SUPPORT SECTION
+========================= */
 
 .footer-top{
-    background:#00cc66;
-    color:white;
+    background:#d4af37;
+    color:#000;
     text-align:center;
-    padding:60px 20px;
+    padding:70px 20px;
 }
 
 .footer-top h1{
-    font-size:60px;
+    font-size:50px;
     margin-bottom:20px;
 }
 
 .footer-top p{
-    font-size:24px;
+    font-size:22px;
 }
 
-footer{
-    background:black;
-    color:white;
-    text-align:center;
-    padding:25px;
-    font-size:18px;
-}
-
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:900px)
 {
@@ -169,14 +160,20 @@ footer{
         grid-template-columns:1fr;
     }
 
-    header{
-        flex-direction:column;
-        gap:20px;
+    .contact-section{
+        padding:50px 20px;
     }
 
-    nav ul{
-        flex-wrap:wrap;
-        justify-content:center;
+    .contact-box h1{
+        font-size:34px;
+    }
+
+    .footer-top h1{
+        font-size:38px;
+    }
+
+    .footer-top p{
+        font-size:18px;
     }
 }
 
@@ -188,130 +185,123 @@ footer{
 
 <!-- HEADER -->
 
-<header>
-
-<div class="logo">
-LHASA ADMIN PANEL
-</div>
-
-<nav>
-
-<ul>
-
-<li><a href="index.php">Dashboard</a></li>
-
-<li><a href="Products.php">Products</a></li>
-
-<li><a href="Category.php">Categories</a></li>
-
-<li><a href="Offers.php">Offers</a></li>
-
-<li><a href="User.php">Users</a></li>
-
-<li><a href="Feedback.php">Feedback</a></li>
-
-<li><a href="Orders.php">Orders</a></li>
-
-<li><a href="logout.php">Logout</a></li>
-
-</ul>
-
-</nav>
-
-</header>
+<?php include "Header.php"; ?>
 
 <!-- CONTACT SECTION -->
 
 <section class="contact-section">
 
-<div class="contact-container">
+    <div class="contact-container">
 
-<!-- LEFT SIDE -->
+        <!-- LEFT SIDE -->
 
-<div class="contact-box">
+        <div class="contact-box">
 
-<h1>Admin Contact</h1>
+            <h1>
+                Admin Contact
+            </h1>
 
-<p>
-For admin support, technical help, or business inquiries,
-contact the Lhasa Clothing Store management team.
-</p>
+            <p>
+                For admin support, technical help,
+                or business inquiries, contact the
+                Lhasa Clothing Store management team.
+            </p>
 
-<h2>Office Address</h2>
+            <h2>
+                Office Address
+            </h2>
 
-<p>
-The Dalai Lama Institute for Higher Education<br><br>
+            <p>
 
-Sheshagirihally, Hejjala Post<br>
+                The Dalai Lama Institute for Higher Education
 
-Bidadi Hobli, Ramanagar Taluk<br>
+                <br><br>
 
-Bangalore, Karnataka 562109, India
-</p>
+                Sheshagirihally, Hejjala Post
 
-<h2>Phone</h2>
+                <br>
 
-<p>
-+91 7676356021
-</p>
+                Bidadi Hobli, Ramanagar Taluk
 
-<h2>Email</h2>
+                <br>
 
-<p>
-milindbauddhalxvii@gmail.com
-</p>
+                Bangalore, Karnataka 562109, India
 
-</div>
+            </p>
 
-<!-- RIGHT SIDE -->
+            <h2>
+                Phone
+            </h2>
 
-<div class="contact-box">
+            <p>
+                +91 7676356021
+            </p>
 
-<h1>Send Message</h1>
+            <h2>
+                Email
+            </h2>
 
-<form>
+            <p>
+                milindbauddhalxvii@gmail.com
+            </p>
 
-<input type="text" placeholder="Your Name" required>
+        </div>
 
-<input type="email" placeholder="Your Email" required>
+        <!-- RIGHT SIDE -->
 
-<input type="text" placeholder="Subject" required>
+        <div class="contact-box">
 
-<textarea placeholder="Your Message"></textarea>
+            <h1>
+                Send Message
+            </h1>
 
-<button type="submit">
+            <form>
 
-Send Message
+                <input type="text"
+                       placeholder="Your Name"
+                       required>
 
-</button>
+                <input type="email"
+                       placeholder="Your Email"
+                       required>
 
-</form>
+                <input type="text"
+                       placeholder="Subject"
+                       required>
 
-</div>
+                <textarea placeholder="Your Message"></textarea>
 
-</div>
+                <button type="submit">
+
+                    Send Message
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
 
 </section>
 
-<!-- FOOTER TOP -->
+<!-- SUPPORT SECTION -->
 
 <div class="footer-top">
 
-<h1>Need Admin Support?</h1>
+    <h1>
+        Need Admin Support?
+    </h1>
 
-<p>
-Our Technical Team Is Ready To Help Anytime
-</p>
+    <p>
+        Our Technical Team Is Ready To Help Anytime
+    </p>
 
 </div>
 
 <!-- FOOTER -->
 
-<footer>
-
-© 2026 Lhasa Clothing Store Admin Panel | All Rights Reserved
-
-</footer>
+<?php include "../Footer.php"; ?>
 
 </body>
 </html>

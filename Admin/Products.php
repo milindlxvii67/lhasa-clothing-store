@@ -26,7 +26,7 @@ $result = mysqli_query($con,$sql);
 <head>
 <meta charset="UTF-8">
 <title>Manage Products</title>
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css">
 
 <style>
 
@@ -254,7 +254,7 @@ $result = mysqli_query($con,$sql);
 
             </h1>
 
-            <a href="../add_product.php" class="add-product-btn">
+            <a href="Insertproduct.php" class="add-product-btn">
 
                 + Add Product
 
@@ -375,7 +375,7 @@ while($row=mysqli_fetch_array($result))
 
 </div>
 
-<?php include "Footer.php"; ?>
+<?php include "../Footer.php"; ?>
 
 </body>
 </html>

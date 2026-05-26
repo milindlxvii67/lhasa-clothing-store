@@ -46,7 +46,7 @@ $totalOrders = mysqli_num_rows($result);
 
 <title>Manage Orders</title>
 
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css">
 
 <style>
 
@@ -395,7 +395,7 @@ else
 
 </div>
 
-<?php include "Footer.php"; ?>
+<?php include "../Footer.php"; ?>
 
 </body>
 </html>

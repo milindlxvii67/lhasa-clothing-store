@@ -14,7 +14,7 @@ $result = mysqli_query($con,$sql);
 <head>
 <meta charset="UTF-8">
 <title>Manage Categories</title>
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css">
 
 <style>
 

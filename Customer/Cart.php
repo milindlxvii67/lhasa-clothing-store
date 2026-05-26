@@ -1,31 +1,136 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION['Customer']))
+{
+    header("Location: ../Login.php");
+    exit();
+}
+
+$con = mysqli_connect("localhost","root","","shopping");
+
+$CustomerName = $_SESSION['Customer'];
+
+$sql = "SELECT * FROM shopping_cart WHERE CustomerName='$CustomerName'";
+
+$result = mysqli_query($con,$sql);
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-<meta charset="UTF-8">
-<title>Cart</title>
-<link rel="stylesheet" href="../style.css">
+
+    <title>My Cart</title>
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
 <?php include "Header.php"; ?>
 
-<section class="section">
+<div class="cart-container">
 
-    <h2>Your Shopping Cart</h2>
+    <h1 class="cart-title">
 
-    <div class="offer-section">
+        Your Shopping Cart
 
-        <h2>Cart Feature</h2>
+    </h1>
 
-        <p>
-            Your selected fashion products will appear here.
-        </p>
+<?php
+
+if(mysqli_num_rows($result) > 0)
+{
+
+?>
+
+    <div class="cart-grid">
+
+<?php
+
+$GrandTotal = 0;
+
+while($row = mysqli_fetch_array($result))
+{
+
+    $GrandTotal += $row['Total'];
+
+?>
+
+        <div class="cart-card">
+
+            <img src="../Products/<?php echo $row['Image']; ?>">
+
+            <h2>
+
+                <?php echo $row['ItemName']; ?>
+
+            </h2>
+
+            <p>
+
+                Quantity :
+                <?php echo $row['Quantity']; ?>
+
+            </p>
+
+            <p>
+
+                Price :
+                ₹<?php echo $row['Price']; ?>
+
+            </p>
+
+            <p class="total-price">
+
+                Total :
+                ₹<?php echo $row['Total']; ?>
+
+            </p>
+
+            <a href="DeleteCart.php?id=<?php echo $row['CartId']; ?>"
+               class="remove-btn">
+
+                Remove
+
+            </a>
+
+        </div>
+
+<?php
+}
+?>
 
     </div>
 
-</section>
+    <div class="grand-total">
+
+        Grand Total :
+        ₹<?php echo $GrandTotal; ?>
+
+    </div>
+
+<?php
+}
+else
+{
+?>
+
+    <div class="empty-cart">
+
+        Your cart is empty.
+
+    </div>
+
+<?php
+}
+?>
+
+</div>
 
 <?php include "Footer.php"; ?>
 

@@ -28,7 +28,7 @@ $result = mysqli_query($con,$sql);
 <head>
 <meta charset="UTF-8">
 <title>Manage Users</title>
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css">
 
 <style>
 
@@ -348,7 +348,7 @@ while($row=mysqli_fetch_array($result))
 
 </div>
 
-<?php include "Footer.php"; ?>
+<?php include "../Footer.php"; ?>
 
 </body>
 </html>

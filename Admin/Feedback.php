@@ -14,7 +14,7 @@ $result = mysqli_query($con,$sql);
 <head>
 <meta charset="UTF-8">
 <title>Customer Feedback</title>
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -63,7 +63,7 @@ Delete
 
 </section>
 
-<?php include "Footer.php"; ?>
+<?php include "../Footer.php"; ?>
 
 </body>
 </html>

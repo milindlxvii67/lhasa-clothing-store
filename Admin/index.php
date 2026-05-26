@@ -12,60 +12,101 @@ if(!isset($_SESSION['Admin']))
 
 <!DOCTYPE html>
 <html>
+
 <head>
 
-<title>Admin Dashboard</title>
+    <title>Admin Dashboard</title>
 
-<link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div class="main-container">
+<?php include "Header.php"; ?>
 
-<?php include "../Header.php"; ?>
+<div class="admin-page">
 
-<section class="dashboard-section">
-
-    <div class="dashboard-box">
+    <div class="dashboard-title">
 
         <h1>
             Welcome Admin,
             <?php echo $_SESSION['Admin']; ?>
         </h1>
 
-        <div class="dashboard-cards">
+        <p>
+            Manage your Lhasa Clothing Store easily.
+        </p>
 
-            <a href="Category.php" class="dashboard-card">
-                <h2>Manage Categories</h2>
-            </a>
+    </div>
 
-            <a href="Products.php" class="dashboard-card">
-                <h2>Manage Products</h2>
-            </a>
+    <div class="dashboard-grid">
 
-            <a href="Orders.php" class="dashboard-card">
-                <h2>View Orders</h2>
-            </a>
+        <a href="Category.php" class="dashboard-card">
 
-            <a href="Contact.php" class="dashboard-card">
-                <h2>Customer Feedback</h2>
-            </a>
+            <h2>📂</h2>
 
-        </div>
+            <h3>Manage Categories</h3>
 
-        <a href="../logout.php" class="logout-btn">
-            Logout
+            <p>Add, Edit & Delete Categories</p>
+
+        </a>
+
+        <a href="Products.php" class="dashboard-card">
+
+            <h2>🛍️</h2>
+
+            <h3>Manage Products</h3>
+
+            <p>Add & Update Product Collection</p>
+
+        </a>
+
+        <a href="Orders.php" class="dashboard-card">
+
+            <h2>📦</h2>
+
+            <h3>View Orders</h3>
+
+            <p>Track Customer Orders</p>
+
+        </a>
+
+        <a href="User.php" class="dashboard-card">
+
+            <h2>👥</h2>
+
+            <h3>Users</h3>
+
+            <p>Manage Registered Users</p>
+
+        </a>
+
+        <a href="Feedback.php" class="dashboard-card">
+
+            <h2>⭐</h2>
+
+            <h3>Customer Feedback</h3>
+
+            <p>View Customer Reviews</p>
+
+        </a>
+
+        <a href="Offers.php" class="dashboard-card">
+
+            <h2>🔥</h2>
+
+            <h3>Offers</h3>
+
+            <p>Manage Special Discounts</p>
+
         </a>
 
     </div>
 
-</section>
+</div>
 
 <?php include "../Footer.php"; ?>
-
-</div>
 
 </body>
 </html>

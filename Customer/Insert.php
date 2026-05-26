@@ -1,49 +1,128 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-</head>
-
-<body>
 <?php
-	session_start();
-	$Id=$_GET['Id'];
 
-$con = mysqli_connect("localhost","root", "", "shopping");
+session_start();
 
-$sql = "select * from Item_Master where ItemId=".$Id."";
+include "../config.php";
 
-$result = mysqli_query($con, $sql);
+/* =========================
+   LOGIN CHECK
+========================= */
 
-while($row = mysqli_fetch_array($result))
+if(!isset($_SESSION['Customer']))
 {
-$Id=$row['ItemId'];
-$Name=$row['ItemName'];
-$Description=$row['Description'];
-$Size=$row['Size'];
-$Price=$row['Price'];
-$Discount=$row['Discount'];
-$Total=$row['Total'];
-$Image=$row['Image'];
+    header("Location: ../Login.php");
+    exit();
 }
-	$Qty=$_POST['txtQty'];
-	$CID=$_SESSION['ID'];
-	$ODate= date('y/m/d');
-	$Net=$Total*$Qty;
-	mysqli_close ($con);
-	
-	
-	
-	$con = mysqli_connect ("localhost","root", "", "shopping");
 
-	$sql = "insert into Shopping_Cart(CustomerId,ItemName,Quantity,Price,Total,OrderDate) values(".$CID.",'".$Name."',".$Qty.",".$Total.",".$Net.",".$ODate.")";
+/* =========================
+   PRODUCT ID CHECK
+========================= */
 
-	mysqli_query ($con, $sql);
-	
-	mysqli_close ($con);
-	echo '<script type="text/javascript">alert("Item Added To the cart");window.location=\'Products.php\';</script>';
+if(!isset($_GET['Id']))
+{
+    header("Location: Products.php");
+    exit();
+}
+
+$Id = intval($_GET['Id']);
+
+/* =========================
+   QUANTITY CHECK
+========================= */
+
+if(!isset($_POST['txtQty']))
+{
+    die("Quantity Missing");
+}
+
+$Qty = intval($_POST['txtQty']);
+
+if($Qty <= 0)
+{
+    die("Invalid Quantity");
+}
+
+/* =========================
+   FETCH PRODUCT
+========================= */
+
+$query = "SELECT * FROM products WHERE Id='$Id'";
+
+$result = mysqli_query($conn, $query);
+
+if(!$result)
+{
+    die(mysqli_error($conn));
+}
+
+if(mysqli_num_rows($result) == 0)
+{
+    die("Product Not Found");
+}
+
+$row = mysqli_fetch_assoc($result);
+
+/* =========================
+   PRODUCT DATA
+========================= */
+
+$ProductName = $row['ProductName'];
+
+$Price = $row['Price'];
+
+$Image = $row['Image'];
+
+$Total = $Price * $Qty;
+
+$OrderDate = date("Y-m-d H:i:s");
+
+$CustomerName = $_SESSION['Customer'];
+
+/* =========================
+   INSERT INTO CART
+========================= */
+
+$insert = "INSERT INTO cart
+(
+    CustomerName,
+    ProductName,
+    Quantity,
+    Price,
+    Total,
+    OrderDate,
+    Image
+)
+
+VALUES
+(
+    '$CustomerName',
+    '$ProductName',
+    '$Qty',
+    '$Price',
+    '$Total',
+    '$OrderDate',
+    '$Image'
+)";
+
+$insertResult = mysqli_query($conn, $insert);
+
+if(!$insertResult)
+{
+    die(mysqli_error($conn));
+}
+
+/* =========================
+   SUCCESS
+========================= */
+
+echo "
+<script>
+
+alert('Item Added To Cart Successfully');
+
+window.location='../Products.php';
+
+</script>
+";
 
 ?>
-</body>
-</html>

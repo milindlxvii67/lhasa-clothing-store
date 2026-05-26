@@ -2,13 +2,13 @@
 
 session_start();
 
-if(!isset($_SESSION['CustomerId']))
+if(!isset($_SESSION['Customer']))
 {
     header("Location: ../Login.php");
     exit();
 }
 
-$CustomerName = $_SESSION['CustomerName'];
+$CustomerName = $_SESSION['Customer'];
 
 ?>
 
@@ -29,7 +29,7 @@ $CustomerName = $_SESSION['CustomerName'];
 
 <body>
 
-<?php include "../Header.php"; ?>
+<?php include "Header.php"; ?>
 
 <div class="dashboard-container">
 

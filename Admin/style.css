@@ -1,190 +1,457 @@
-body {
-margin : 0;
-padding : 0;
-text-align : left;
-font : 75% "Trebuchet MS", verdana, arial, sans-serif;
-line-height : 1.5em;
-background : #BCE0A8 url(img/bg.jpg) top center repeat-y;
-color : #000;
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-			/*CONTAINER*/
-#wrapper 
-{
-position : relative;
-width : 780px;
-margin-right : auto;
-margin-left : auto;
-padding : 0;
-border : 0px solid green;
-background : #fff;
+
+/* =========================
+   BODY
+========================= */
+
+body{
+    font-family:'Trebuchet MS', sans-serif;
+    background:#f4f4f4;
+    color:#222;
+    line-height:1.6;
 }
-			/*TOP TITLE BAR*/
-#title {
-width : 770px;
-margin-left : 5px;
-padding : 0;
-text-align : right;
-background : #fff;
-color : #000;
+
+/* =========================
+   WRAPPER
+========================= */
+
+#wrapper{
+    width:100%;
+    min-height:100vh;
 }
-#title h1 {
-margin : 0;
-padding : 10px;
-font-size : 175%;
-text-transform : uppercase;
-letter-spacing : 5px;
-background : inherit;
-color : #BCE0A8;
+
+/* =========================
+   ADMIN HEADER
+========================= */
+
+.admin-header{
+    width:100%;
+    background:#000;
+    border-bottom:3px solid #d4af37;
+    padding:15px 40px;
+    position:sticky;
+    top:0;
+    z-index:999;
 }
-			/*BANNER*/
-#header {
-background : url(images/header.jpg) no-repeat;
-width : 770px;
-height : 200px;
-margin : 0 0 0 5px;
-padding : 0 0 0 0;
+
+/* =========================
+   HEADER CONTAINER
+========================= */
+
+.admin-container{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    flex-wrap:wrap;
 }
-			/*TOP NAVIGATION*/
-.container {
-width : 770px;
-height : 35px;
-margin : 20px 0 10px 5px;
-background-color:#669933;
-color:#FFFFCC;
+
+/* =========================
+   LOGO SECTION
+========================= */
+
+.admin-logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    text-decoration:none;
 }
-#navCircle {
-margin : 0;
-padding : 0 0 20px 20px;
+
+.admin-logo img{
+    width:70px;
+    height:70px;
+    object-fit:contain;
+    border-radius:50%;
+    background:#111;
+    padding:5px;
+}
+
+.admin-logo h1{
+    color:#d4af37;
+    font-size:32px;
+    font-weight:bold;
+    margin:0;
+    white-space:nowrap;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    flex:1;
+}
+
+.nav-links{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    gap:25px;
+    flex-wrap:wrap;
+    list-style:none;
+}
+
+.nav-links li{
+    list-style:none;
+}
+
+.nav-links li a{
+    color:#fff;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.nav-links li a:hover{
+    color:#d4af37;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+#content{
+    width:100%;
+    padding:40px;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1{
+    font-size:42px;
+    margin-bottom:20px;
+    color:#111;
+    text-align:center;
+}
+
+h2{
+    font-size:36px;
+    margin-bottom:20px;
+    color:#111;
+    text-align:center;
+}
+
+h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+/* =========================
+   PARAGRAPHS
+========================= */
+
+p{
+    margin-bottom:15px;
+    font-size:16px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.card{
+    background:#fff;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom:30px;
+}
+
+/* =========================
+   DASHBOARD GRID
+========================= */
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.dashboard-card{
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-5px);
+}
+
+.dashboard-card h3{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.dashboard-card p{
+    font-size:18px;
+    font-weight:bold;
+    color:#d4af37;
+}
+
+/* =========================
+   TABLES
+========================= */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    margin-top:20px;
+}
+
+table th{
+    background:#000;
+    color:#fff;
+    padding:15px;
+    text-align:center;
+    font-size:16px;
+}
+
+table td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+    font-size:15px;
+}
+
+table tr:hover{
+    background:#f9f9f9;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+form{
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    margin-bottom:20px;
+    font-size:16px;
+}
+
+textarea{
+    resize:none;
+    height:120px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn,
+button,
+input[type="submit"]{
+    background:#d4af37;
+    color:#000;
+    padding:12px 25px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+    text-decoration:none;
+    font-size:16px;
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover{
+    background:#000;
+    color:#fff;
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.product-image{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:10px;
+    margin:auto;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+#footer{
+    background:#000;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+    border-top:3px solid #d4af37;
+}
+
+#footer a{
+    color:#d4af37;
+    text-decoration:none;
+}
+
+#footer a:hover{
+    color:#fff;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+a{
+    text-decoration:none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .admin-container{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .nav-links{
+        justify-content:center;
+    }
 
 }
-#navCircle li {
-margin : 0;
-padding : 0;
-display : inline;
-list-style-type : none;
-margin-top:5px;
-}
-#navCircle a:link, #navCircle a:visited {
-float : left;
-font-size : 1.3em;
-padding : 0 25px 15px 25px;
-text-decoration : none;
-background : inherit;
-color:#FFFFCC;
-margin-top:5px;
-}
-#navCircle a:link.active, #navCircle a:visited.active, #navCircle a:hover {
-background-color : inherit;
-color : #FFFFCC;
+
+@media(max-width:768px){
+
+    .admin-header{
+        padding:20px;
+    }
+
+    .admin-logo{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .admin-logo h1{
+        font-size:24px;
+    }
+
+    .nav-links{
+        gap:15px;
+    }
+
+    .nav-links li a{
+        font-size:15px;
+    }
+
+    #content{
+        padding:20px;
+    }
+
+    h1{
+        font-size:32px;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+    table{
+        display:block;
+        overflow-x:auto;
+    }
 
 }
-			/*MAIN CONTENT*/
-#content {
-width : 560px;
-float : left;
-margin-top : 0;
-margin-left : 11px;
-padding : 5px;
-border-right : 1px solid #b2d094;
-}
-#content p {
-padding : 0 20px;
-}
-			/*SIDEBAR*/
-#right-col {
-width : 175px;
-margin : 5px 0 0 590px;
-border-left : 1px none #28460a;
-padding : 3px;
-}
-			/*FOOTER*/
-#footer {
-margin : 50px 0 0 0;
-padding : 5px;
-font : 90% "Trebuchet MS", verdana, arial, sans-serif;
-background : #4b692d;
-color : #fff;
-}
-#footer a:link, #footer a:visited {
-background : inherit;
-color : #b2d094;
-}
-#footer a:hover {
-background : inherit;
-color : #fff;
-text-decoration : none;
-}
-			/*SCROLLBAR*/
-div.scroll {
-height : auto;
-width : 160px;
-padding : 1ex;
-margin : 0 0 30px 5px;
-border : 1px solid #345411;
-background : #BCE0A8;
-color : #000;
-}
-			/*TYPOGRAPHY*/
-h2 {
-margin : 20px;
-font-size : 140%;
+/* =========================
+   ADMIN DASHBOARD
+========================= */
 
-letter-spacing : 3px;
-background : inherit;
-color : green;
+.admin-page{
+    padding:50px;
+    min-height:80vh;
 }
-h3 {
-margin : 5px;
-font-size : 120%;
-letter-spacing : 5px;
-background : inherit;
-color : green;
+
+.dashboard-title{
+    text-align:center;
+    margin-bottom:50px;
 }
-blockquote {
-font-weight : bold;
-font-style : italic;
-color : #b29b35;
+
+.dashboard-title h1{
+    font-size:48px;
+    color:#111;
+    margin-bottom:10px;
 }
-			/*LINKS*/
-a img {
-border : none;
+
+.dashboard-title p{
+    font-size:18px;
+    color:#666;
 }
-a:link, a:visited {
-text-decoration : none;
-background : inherit;
-color : #457C05;
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
 }
-a:hover {
-text-decoration : underline;
-background : inherit;
-color : #666;
+
+.dashboard-card{
+    background:#fff;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+    text-decoration:none;
 }
-ul.side {
-list-style-type : square;
-padding : 0;
-margin : 0;
-background : inherit;
-color : #457C05;
+
+.dashboard-card:hover{
+    transform:translateY(-8px);
 }
-.side li {
-padding-left : 0.2em;
-margin-left : 2em;
+
+.dashboard-card h2{
+    font-size:50px;
+    margin-bottom:15px;
 }
-			/*CLASSES*/
-.news {
-font-size : 90%;
-background : inherit;
-color : #000;
+
+.dashboard-card h3{
+    font-size:24px;
+    color:#111;
+    margin-bottom:10px;
 }
-.imgleft {
-float : left;
-border : 1px solid #345411;
-padding : 5px;
-margin-right : 15px;
-}
-.imgright {
-float : right;
-border : 1px solid #345411;
-padding : 5px;
-margin-left : 15px;
+
+.dashboard-card p{
+    color:#666;
+    font-size:16px;
 }
