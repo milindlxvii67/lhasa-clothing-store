@@ -1,0 +1,1179 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow-x:hidden;
+}
+/* =========================
+   GLOBAL
+========================= */
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body
+{
+    min-height: 100%;
+}
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f5f5f5;
+    color: #222;
+
+    overflow-x: hidden;
+}
+
+.main-container
+{
+    flex: 1;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+img
+{
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header
+{
+    width: 100%;
+
+    background: #000;
+
+    padding: 18px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo
+{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img
+{
+    width: 55px;
+    height: 55px;
+
+    object-fit: contain;
+}
+
+.logo h1
+{
+    color: #d4af37;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+nav
+{
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+nav a
+{
+    color: white;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+nav a:hover
+{
+    color: #d4af37;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero
+{
+    width: 100%;
+    min-height: 90vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+    url("img/head.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px;
+}
+
+.hero-content
+{
+    max-width: 700px;
+}
+
+.hero-content h1
+{
+    color: white;
+
+    font-size: 72px;
+    line-height: 1.2;
+
+    margin-bottom: 25px;
+
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.9);
+}
+
+.hero-content p
+{
+    color: #f5f5f5;
+
+    font-size: 24px;
+
+    margin-bottom: 35px;
+
+    text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
+}
+
+.hero-btn
+{
+    display: inline-block;
+
+    background: #d4af37;
+    color: black;
+
+    padding: 16px 38px;
+
+    border-radius: 8px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.hero-btn:hover
+{
+    background: white;
+
+    transform: translateY(-3px);
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section
+{
+    padding: 80px 50px;
+}
+
+.section h2
+{
+    text-align: center;
+
+    font-size: 64px;
+
+    margin-bottom: 60px;
+
+    color: #222;
+}
+
+/* =========================
+   CATEGORY CARDS
+========================= */
+
+.card-container
+{
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+
+    gap: 35px;
+}
+
+.card
+{
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.card:hover
+{
+    transform: translateY(-8px);
+}
+
+.card img
+{
+    width: 170px;
+    height: 170px;
+
+    object-fit: contain;
+
+    margin: auto auto 25px;
+}
+
+.card h3
+{
+    color: #111;
+
+    font-size: 32px;
+
+    margin-bottom: 15px;
+}
+
+.card p
+{
+    color: #666;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.product-grid
+{
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+
+    gap: 35px;
+}
+
+.product-card
+{
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.product-card:hover
+{
+    transform: translateY(-8px);
+}
+
+.product-card img
+{
+    width: 230px;
+    height: 230px;
+
+    object-fit: contain;
+
+    margin: auto auto 25px;
+}
+
+.product-card h3
+{
+    font-size: 36px;
+
+    margin-bottom: 15px;
+}
+
+.product-description
+{
+    color: #666;
+
+    margin-bottom: 20px;
+
+    line-height: 1.6;
+}
+
+.price
+{
+    font-size: 30px;
+    font-weight: bold;
+
+    color: #d4af37;
+
+    margin-bottom: 20px;
+}
+
+.product-card button
+{
+    background: black;
+    color: white;
+
+    border: none;
+
+    padding: 14px 30px;
+
+    border-radius: 8px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.product-card button:hover
+{
+    background: #d4af37;
+    color: black;
+}
+
+/* =========================
+   OFFER BANNER
+========================= */
+
+.offer-banner
+{
+    width: 95%;
+
+    margin: 70px auto;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("img/head.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.offer-overlay
+{
+    padding: 80px 40px;
+
+    text-align: center;
+}
+
+.offer-overlay h2
+{
+    color: white;
+
+    font-size: 52px;
+
+    margin-bottom: 20px;
+}
+
+.offer-overlay p
+{
+    color: #f5f5f5;
+
+    font-size: 22px;
+
+    margin-bottom: 35px;
+}
+
+.offer-btn
+{
+    display: inline-block;
+
+    background: #d4af37;
+    color: black;
+
+    padding: 16px 36px;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.offer-btn:hover
+{
+    background: white;
+
+    transform: translateY(-3px);
+}
+
+/* =========================
+   PROFILE / LOGIN / REGISTER
+========================= */
+
+.login-page,
+.profile-page,
+.register-page
+{
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 60px 20px;
+}
+
+.profile-card,
+.login-card,
+.register-card
+{
+    background: white;
+
+    width: 100%;
+    max-width: 900px;
+
+    padding: 50px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   LOGOS
+========================= */
+
+.profile-logo,
+.login-logo,
+.register-logo
+{
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.profile-logo img,
+.login-logo img,
+.register-logo img
+{
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    margin-bottom: 15px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.profile-card h1,
+.login-card h1,
+.register-logo h1
+{
+    text-align: center;
+
+    font-size: 52px;
+
+    margin-bottom: 15px;
+}
+
+.register-subtitle
+{
+    text-align: center;
+
+    font-size: 20px;
+
+    color: #666;
+
+    margin-bottom: 40px;
+}
+
+/* =========================
+   PROFILE ROWS
+========================= */
+
+.profile-row
+{
+    display: flex;
+    justify-content: space-between;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-row span
+{
+    font-weight: bold;
+
+    font-size: 20px;
+}
+
+.profile-row p
+{
+    color: #555;
+
+    font-size: 19px;
+}
+
+.profile-logout-btn
+{
+    display: block;
+
+    width: 200px;
+
+    margin: 40px auto 0;
+
+    background: red;
+    color: white;
+
+    text-align: center;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.profile-logout-btn:hover
+{
+    background: darkred;
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.login-card label,
+.form-group label
+{
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-weight: bold;
+}
+
+.login-card input,
+.form-group input,
+.form-group select,
+.form-group textarea
+{
+    width: 100%;
+
+    padding: 16px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 10px;
+
+    margin-bottom: 25px;
+
+    font-size: 17px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.form-group textarea
+{
+    resize: none;
+}
+
+.login-card input:focus,
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus
+{
+    border-color: #d4af37;
+
+    box-shadow: 0 0 8px rgba(212,175,55,0.3);
+}
+
+/* =========================
+   REGISTER FORM GRID
+========================= */
+
+.register-form
+{
+    width: 100%;
+}
+
+.form-row
+{
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 25px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.login-card button,
+.register-btn
+{
+    width: 100%;
+
+    background: black;
+    color: white;
+
+    border: none;
+
+    padding: 16px;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.login-card button:hover,
+.register-btn:hover
+{
+    background: #d4af37;
+    color: black;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer
+{
+    width: 100%;
+
+    background: #000;
+    color: white;
+
+    text-align: center;
+
+    padding: 18px 10px;
+
+    border-top: 2px solid #d4af37;
+
+    margin-top: auto;
+}
+
+/* =========================
+   SOCIAL SECTION
+========================= */
+
+.social-section
+{
+    width: 100%;
+
+    background: white;
+
+    padding: 50px 20px;
+
+    text-align: center;
+}
+
+.social-section h2
+{
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.social-section p
+{
+    font-size: 18px;
+
+    color: #555;
+
+    margin-bottom: 35px;
+}
+
+.social-icons
+{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+.social-icons a
+{
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: black;
+
+    border-radius: 50%;
+
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover
+{
+    transform: translateY(-5px);
+
+    background: #d4af37;
+}
+
+.social-icons img
+{
+    width: 30px;
+    height: 30px;
+}
+
+/* =========================
+   PRODUCTS BANNER
+========================= */
+
+.products-banner
+{
+    width: 100%;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url("img/head.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    padding: 80px 20px;
+
+    text-align: center;
+
+    margin-top: 50px;
+}
+
+.products-banner h1
+{
+    color: white;
+
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+.products-banner p
+{
+    color: #f5f5f5;
+
+    font-size: 22px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 991px)
+{
+    header
+    {
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+    nav
+    {
+        justify-content: center;
+    }
+
+    .hero
+    {
+        padding: 50px 30px;
+
+        text-align: center;
+
+        justify-content: center;
+    }
+
+    .hero-content h1
+    {
+        font-size: 52px;
+    }
+
+    .hero-content p
+    {
+        font-size: 20px;
+    }
+
+    .section h2
+    {
+        font-size: 48px;
+    }
+
+    .register-card
+    {
+        padding: 40px;
+    }
+}
+
+@media(max-width: 768px)
+{
+    .form-row
+    {
+        grid-template-columns: 1fr;
+    }
+
+    .offer-overlay
+    {
+        padding: 50px 20px;
+    }
+
+    .offer-overlay h2
+    {
+        font-size: 34px;
+    }
+
+    .offer-overlay p
+    {
+        font-size: 18px;
+    }
+
+    .register-logo h1
+    {
+        font-size: 44px;
+    }
+
+    .register-subtitle
+    {
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 600px)
+{
+    header
+    {
+        padding: 15px;
+    }
+
+    .logo
+    {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .logo h1
+    {
+        font-size: 22px;
+    }
+
+    nav
+    {
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    nav a
+    {
+        font-size: 15px;
+    }
+
+    .hero
+    {
+        padding: 40px 20px;
+    }
+
+    .hero-content h1
+    {
+        font-size: 38px;
+    }
+
+    .hero-content p
+    {
+        font-size: 18px;
+    }
+
+    .section
+    {
+        padding: 50px 20px;
+    }
+
+    .section h2
+    {
+        font-size: 38px;
+    }
+
+    .profile-card,
+    .login-card,
+    .register-card
+    {
+        padding: 25px;
+    }
+
+    .profile-row
+    {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .register-logo img
+    {
+        width: 80px;
+        height: 80px;
+    }
+
+    .register-logo h1
+    {
+        font-size: 36px;
+    }
+
+    .register-subtitle
+    {
+        font-size: 16px;
+    }
+
+    .form-group label
+    {
+        font-size: 16px;
+    }
+
+    .register-btn
+    {
+        font-size: 18px;
+    }
+}
+/* =========================
+   CONTACT PAGE
+========================= */
+
+.contact-page
+{
+    max-width: 1200px;
+
+    margin: 50px auto;
+
+    padding: 40px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.contact-title
+{
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.contact-title h1
+{
+    font-size: 55px;
+
+    color: #111;
+
+    margin-bottom: 10px;
+}
+
+.contact-title p
+{
+    color: #666;
+
+    font-size: 18px;
+}
+
+.contact-container
+{
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+}
+
+.contact-info,
+.contact-form
+{
+    background: #f8f8f8;
+
+    padding: 35px;
+
+    border-radius: 18px;
+}
+
+.contact-info h2,
+.contact-form h2
+{
+    font-size: 38px;
+
+    margin-bottom: 25px;
+
+    color: #111;
+}
+
+.contact-box
+{
+    margin-bottom: 30px;
+}
+
+.contact-box h3
+{
+    font-size: 24px;
+
+    margin-bottom: 10px;
+
+    color: #d4af37;
+}
+
+.contact-box p
+{
+    color: #555;
+
+    line-height: 1.7;
+}
+
+.contact-form form
+{
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea
+{
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.contact-form textarea
+{
+    height: 180px;
+
+    resize: none;
+}
+
+.contact-form button
+{
+    background: black;
+
+    color: white;
+
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.contact-form button:hover
+{
+    background: #d4af37;
+
+    color: black;
+}
+
+/* MOBILE */
+
+@media(max-width:768px)
+{
+    .contact-container
+    {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-title h1
+    {
+        font-size: 38px;
+    }
+
+    .contact-info h2,
+    .contact-form h2
+    {
+        font-size: 28px;
+    }
+
+    .contact-page
+    {
+        padding: 20px;
+
+        margin: 20px;
+    }
+}

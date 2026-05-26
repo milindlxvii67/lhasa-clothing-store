@@ -1,0 +1,264 @@
+/* =========================
+   RESET
+========================= */
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body
+{
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #111;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.customer-header
+{
+    width: 100%;
+    background: #000;
+    padding: 20px 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.customer-logo
+{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    text-decoration: none;
+}
+
+.customer-logo img
+{
+    width: 70px;
+}
+
+.customer-logo h1
+{
+    color: #d4af37;
+    font-size: 38px;
+}
+
+.customer-nav
+{
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.customer-nav a
+{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.customer-nav a:hover
+{
+    color: #d4af37;
+}
+
+/* =========================
+   CUSTOMER HOME
+========================= */
+
+.customer-home
+{
+    padding: 60px 40px;
+    min-height: 100vh;
+}
+
+.customer-home-title
+{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.customer-home-title h1
+{
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.customer-home-title p
+{
+    color: #666;
+    font-size: 18px;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.customer-home-grid
+{
+    max-width: 1300px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 30px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.customer-home-card
+{
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+.customer-home-card:hover
+{
+    transform: translateY(-8px);
+}
+
+/* =========================
+   CARD IMAGE
+========================= */
+
+.customer-home-card img
+{
+    width: 120px;
+    height: 120px;
+
+    object-fit: contain;
+
+    margin-bottom: 20px;
+}
+
+/* =========================
+   CARD TITLE
+========================= */
+
+.customer-home-card h2
+{
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   CARD TEXT
+========================= */
+
+.customer-home-card p
+{
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.customer-home-card a
+{
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    background: black;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.customer-home-card a:hover
+{
+    background: #d4af37;
+    color: black;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.customer-footer
+{
+    width: 100%;
+    background: black;
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px)
+{
+    .customer-header
+    {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .customer-logo h1
+    {
+        font-size: 28px;
+    }
+
+    .customer-nav
+    {
+        justify-content: center;
+    }
+
+    .customer-home
+    {
+        padding: 40px 20px;
+    }
+
+    .customer-home-title h1
+    {
+        font-size: 36px;
+    }
+
+    .customer-home-grid
+    {
+        grid-template-columns: 1fr;
+    }
+}
